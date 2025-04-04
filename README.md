@@ -15,8 +15,8 @@ An open-source, no-code framework for creating AI-powered tools that run in the 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/aihustleframework.git
-cd aihustleframework
+git clone https://github.com/ignitara/ai-hustle-framework.git
+cd ai-hustle-framework
 ```
 
 2. Open the `index.html` file in your browser to access the launcher page.
