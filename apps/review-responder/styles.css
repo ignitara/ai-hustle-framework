@@ -1,0 +1,76 @@
+/* AI Hustle Framework - Review Responder Specific Styles */
+
+/* Review input styles */
+.review-input {
+  min-height: 120px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* Response card styles */
+.response-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.response-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.response-card .review-text {
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--bg-color);
+  border-radius: 0.375rem;
+}
+
+.response-card .response-text {
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Tone selector styles */
+.tone-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.tone-option {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tone-option:hover {
+  border-color: var(--primary-color);
+  background-color: var(--bg-color);
+}
+
+.tone-option.selected {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offer Refiner - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=OR"
+          alt="Offer Refiner"
+          class="logo"
+        />
+        <h1>Offer Refiner</h1>
+        <p class="tagline">Transform your offer into an irresistible pitch</p>
+      </header>
+
+      <form id="offerForm" class="form-container">
+        <div class="form-group">
+          <label for="product">What are you selling?</label>
+          <input
+            type="text"
+            id="product"
+            name="product"
+            class="form-control"
+            required
+            placeholder="e.g. 1:1 coaching for women who want to lose weight"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="audience">Who is it for?</label>
+          <input
+            type="text"
+            id="audience"
+            name="audience"
+            class="form-control"
+            required
+            placeholder="e.g. Women over 40 who struggle with dieting"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="transformation">What's the big transformation?</label>
+          <input
+            type="text"
+            id="transformation"
+            name="transformation"
+            class="form-control"
+            required
+            placeholder="e.g. Help them lose 20 pounds in 90 days without strict dieting"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="objections">What objections do people have?</label>
+          <input
+            type="text"
+            id="objections"
+            name="objections"
+            class="form-control"
+            required
+            placeholder="e.g. They think they don't have time, and they hate meal prep"
+          />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          Generate Offer & Hooks
+        </button>
+      </form>
+
+      <div id="loadingSpinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Crafting your perfect offer...</p>
+      </div>
+
+      <div id="errorMessage" class="error-message" style="display: none"></div>
+      <div
+        id="successMessage"
+        class="success-message"
+        style="display: none"
+      ></div>
+
+      <div id="resultsContainer" class="results-container"></div>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

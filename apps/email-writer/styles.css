@@ -1,0 +1,31 @@
+/* AI Hustle Framework - Email Writer Specific Styles */
+
+/* Email-specific card styles */
+.email-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-color);
+}
+
+.email-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.email-card p {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.email-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* Add any other app-specific styles below */

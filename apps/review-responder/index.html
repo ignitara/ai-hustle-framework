@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Responder - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=RR"
+          alt="Review Responder"
+          class="logo"
+        />
+        <h1>Review Responder</h1>
+        <p class="tagline">
+          Generate professional responses to customer reviews
+        </p>
+      </header>
+
+      <main>
+        <form id="reviewForm" class="generator-form">
+          <div class="form-group">
+            <label for="businessType">Business Type</label>
+            <input
+              type="text"
+              id="businessType"
+              name="businessType"
+              class="form-control"
+              required
+              placeholder="e.g. Restaurant, Hotel, Software Company"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="reviewText">Review Text</label>
+            <textarea
+              id="reviewText"
+              name="reviewText"
+              class="form-control review-input"
+              required
+              placeholder="Paste the customer review here..."
+            ></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Response Tone</label>
+            <select id="tone" name="tone" class="form-control" required>
+              <option value="professional">Professional</option>
+              <option value="friendly">Friendly</option>
+              <option value="empathetic">Empathetic</option>
+              <option value="formal">Formal</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Generate Response
+          </button>
+        </form>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Crafting your response...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </main>
+
+      <footer>
+        <p>Part of the AI Hustle Framework</p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

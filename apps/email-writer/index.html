@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Writer - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=EW"
+          alt="Email Writer Logo"
+          class="logo"
+        />
+        <h1>Email Writer</h1>
+        <p class="tagline">
+          Create Professional Marketing and Nurturing Emails
+        </p>
+      </header>
+
+      <main>
+        <form id="emailForm" class="generator-form">
+          <div class="form-group">
+            <label for="emailType">Email Type</label>
+            <select id="emailType" name="emailType" required>
+              <option value="">Select an email type</option>
+              <option value="marketing">Marketing Email</option>
+              <option value="nurturing">Nurturing Email</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="product">Product or Service</label>
+            <input
+              type="text"
+              id="product"
+              name="product"
+              placeholder="e.g. Online fitness coaching program"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="targetAudience">Target Audience</label>
+            <input
+              type="text"
+              id="targetAudience"
+              name="targetAudience"
+              placeholder="e.g. Busy professionals who want to get fit"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Email Tone</label>
+            <select id="tone" name="tone" required>
+              <option value="">Select a tone</option>
+              <option value="professional">Professional</option>
+              <option value="friendly">Friendly</option>
+              <option value="urgent">Urgent</option>
+              <option value="educational">Educational</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="callToAction">Call to Action</label>
+            <input
+              type="text"
+              id="callToAction"
+              name="callToAction"
+              placeholder="e.g. Sign up for a free consultation"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Generate Email</button>
+        </form>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Generating email...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </main>
+
+      <footer>
+        <p>Part of the AI Hustle Framework</p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

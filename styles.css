@@ -1,0 +1,365 @@
+/* AI Hustle Framework - Common Styles */
+:root {
+  --primary-color: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-hover: #1d4ed8;
+  --text-color: #1f2937;
+  --text-secondary: #64748b;
+  --bg-color: #f3f4f6;
+  --card-bg: #ffffff;
+  --error-color: #dc2626;
+  --success-color: #059669;
+  --border-color: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  padding: 2rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header Styles */
+header,
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo,
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.header img {
+  width: 64px;
+  height: 64px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.tagline,
+.header p {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Form Styles */
+.generator-form,
+.api-key-section {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.api-key-section {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.api-key-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+input,
+select,
+textarea,
+.api-key-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+.api-key-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+}
+
+/* Category Styles */
+.categories {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.category-btn:hover {
+  background-color: var(--bg-color);
+}
+
+.category-btn.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* App Grid Styles */
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.app-card {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: var(--text-color);
+  display: block;
+}
+
+.app-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.app-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.app-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.app-description {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.app-category {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: none;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.loading-spinner.active {
+  display: block;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--bg-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Message Styles */
+.message,
+.error-message,
+.success-message {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.error-message {
+  background-color: #fee2e2;
+  color: var(--error-color);
+  border: 1px solid #fecaca;
+}
+
+.success-message {
+  background-color: #dcfce7;
+  color: var(--success-color);
+  border: 1px solid #bbf7d0;
+}
+
+/* Results Container */
+.results-container {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+  color: var(--text-secondary);
+}
+
+/* Back Button */
+.back-btn {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: 48px;
+  height: 48px;
+  background-color: #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: transform 0.2s;
+  z-index: 100;
+}
+
+.back-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .container {
+    padding: 0;
+  }
+
+  .api-key-form {
+    flex-direction: column;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .back-btn {
+    top: 1rem;
+    left: 1rem;
+  }
+}

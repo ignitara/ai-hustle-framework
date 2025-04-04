@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Hustle Framework - App Launcher</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          src="https://placehold.co/64x64/2563eb/ffffff?text=AH"
+          alt="AI Hustle Framework Logo"
+        />
+        <h1>AI Hustle Framework</h1>
+        <p>AI-Powered Tools for Non-Coders</p>
+      </header>
+
+      <div class="api-key-section">
+        <form id="apiKeyForm" class="api-key-form">
+          <input
+            type="password"
+            id="apiKey"
+            class="api-key-input"
+            placeholder="Enter your OpenAI API key"
+            value=""
+          />
+          <button type="submit" class="btn btn-primary">Save API Key</button>
+        </form>
+        <div id="errorMessage" class="message error-message"></div>
+        <div id="successMessage" class="message success-message"></div>
+      </div>
+
+      <div class="categories" id="categories">
+        <!-- Categories will be populated by JavaScript -->
+      </div>
+
+      <div class="apps-grid" id="appsGrid">
+        <!-- App cards will be populated by JavaScript -->
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+      class AppLauncher {
+        constructor() {
+          this.apiKey = localStorage.getItem("openaiApiKey") || "";
+          this.apiKeyForm = document.getElementById("apiKeyForm");
+          this.apiKeyInput = document.getElementById("apiKey");
+          this.errorMessage = document.getElementById("errorMessage");
+          this.successMessage = document.getElementById("successMessage");
+          this.categoriesContainer = document.getElementById("categories");
+          this.appsGrid = document.getElementById("appsGrid");
+          this.selectedCategory = "all";
+          this.baseUrl = window.location.href.substring(
+            0,
+            window.location.href.lastIndexOf("/") + 1
+          );
+
+          this.initializeEventListeners();
+          this.populateCategories();
+          this.displayApps();
+        }
+
+        initializeEventListeners() {
+          // API Key form submission
+          this.apiKeyForm.addEventListener("submit", (e) =>
+            this.handleApiKeySubmit(e)
+          );
+
+          // Set initial API key value if exists
+          if (this.apiKey) {
+            this.apiKeyInput.value = this.apiKey;
+          }
+        }
+
+        handleApiKeySubmit(e) {
+          e.preventDefault();
+          const apiKey = this.apiKeyInput.value.trim();
+
+          if (!apiKey) {
+            this.showError(config.errors.missingApiKey);
+            return;
+          }
+
+          this.apiKey = apiKey;
+          localStorage.setItem("openaiApiKey", apiKey);
+          this.showSuccess(config.success.apiKeySaved);
+        }
+
+        populateCategories() {
+          const categories = ["all", ...config.categories];
+          this.categoriesContainer.innerHTML = categories
+            .map(
+              (category) => `
+                    <button 
+                        class="category-btn ${
+                          category === this.selectedCategory ? "active" : ""
+                        }"
+                        data-category="${category}"
+                    >
+                        ${category === "all" ? "All Apps" : category}
+                    </button>
+                `
+            )
+            .join("");
+
+          // Add click handlers to category buttons
+          this.categoriesContainer
+            .querySelectorAll(".category-btn")
+            .forEach((btn) => {
+              btn.addEventListener("click", () => {
+                this.selectedCategory = btn.dataset.category;
+                this.categoriesContainer
+                  .querySelectorAll(".category-btn")
+                  .forEach((b) =>
+                    b.classList.toggle(
+                      "active",
+                      b.dataset.category === this.selectedCategory
+                    )
+                  );
+                this.displayApps();
+              });
+            });
+        }
+
+        displayApps() {
+          const filteredApps =
+            this.selectedCategory === "all"
+              ? config.apps
+              : config.apps.filter(
+                  (app) => app.category === this.selectedCategory
+                );
+
+          this.appsGrid.innerHTML = filteredApps
+            .map(
+              (app) => `
+                    <a href="${this.baseUrl}${app.path.substring(
+                1
+              )}" class="app-card">
+                        <div class="app-icon">${app.icon}</div>
+                        <div class="app-name">${app.name}</div>
+                        <div class="app-description">${app.description}</div>
+                        <div class="app-category">${app.category}</div>
+                    </a>
+                `
+            )
+            .join("");
+        }
+
+        showError(message) {
+          this.errorMessage.textContent = message;
+          this.errorMessage.style.display = "block";
+          this.successMessage.style.display = "none";
+        }
+
+        showSuccess(message) {
+          this.successMessage.textContent = message;
+          this.successMessage.style.display = "block";
+          this.errorMessage.style.display = "none";
+          setTimeout(() => {
+            this.successMessage.style.display = "none";
+          }, 3000);
+        }
+      }
+
+      // Initialize the app when the DOM is loaded
+      document.addEventListener("DOMContentLoaded", () => {
+        new AppLauncher();
+      });
+    </script>
+  </body>
+</html>

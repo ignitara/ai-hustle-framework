@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Social Post Generator - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=SP"
+          alt="Social Post Generator Logo"
+          class="logo"
+        />
+        <h1>Social Post Generator</h1>
+        <p class="tagline">Create Engaging Social Media Posts</p>
+      </header>
+
+      <main>
+        <form id="postGeneratorForm" class="generator-form">
+          <div class="form-group">
+            <label for="businessType">Business Type</label>
+            <input
+              type="text"
+              id="businessType"
+              name="businessType"
+              placeholder="e.g. Fitness coaching"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="targetAudience">Target Audience</label>
+            <input
+              type="text"
+              id="targetAudience"
+              name="targetAudience"
+              placeholder="e.g. Busy professionals"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="tone">Post Tone</label>
+            <select id="tone" name="tone" required>
+              <option value="">Select a tone</option>
+              <option value="professional">Professional</option>
+              <option value="casual">Casual</option>
+              <option value="humorous">Humorous</option>
+              <option value="inspirational">Inspirational</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="platform">Platform</label>
+            <select id="platform" name="platform" required>
+              <option value="">Select a platform</option>
+              <option value="twitter">Twitter</option>
+              <option value="linkedin">LinkedIn</option>
+              <option value="facebook">Facebook</option>
+              <option value="instagram">Instagram</option>
+              <option value="tiktok">TikTok</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Generate Posts</button>
+        </form>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Generating posts...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </main>
+
+      <footer>
+        <p>Part of the AI Hustle Framework</p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

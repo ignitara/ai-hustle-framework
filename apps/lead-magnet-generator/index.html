@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lead Magnet Generator - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=LM"
+          alt="Lead Magnet Generator Logo"
+          class="logo"
+        />
+        <h1>Lead Magnet Generator</h1>
+        <p class="tagline">Create Compelling Lead Magnets That Convert</p>
+      </header>
+
+      <main>
+        <form id="leadMagnetForm" class="generator-form">
+          <div class="form-group">
+            <label for="niche">Niche or Topic</label>
+            <input
+              type="text"
+              id="niche"
+              name="niche"
+              placeholder="e.g. Fitness coaching"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="audience">Target Audience</label>
+            <input
+              type="text"
+              id="audience"
+              name="audience"
+              placeholder="e.g. Busy moms over 40"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="outcome">Desired Outcome</label>
+            <input
+              type="text"
+              id="outcome"
+              name="outcome"
+              placeholder="e.g. Lose weight without going to the gym"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Generate Lead Magnets
+          </button>
+        </form>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Generating lead magnets...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </main>
+
+      <footer>
+        <p>Part of the AI Hustle Framework</p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page Writer - AI Hustle Framework</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a href="../../index.html" class="back-btn">←</a>
+    <div class="container">
+      <header>
+        <img
+          src="https://placehold.co/100x100/2563eb/ffffff?text=LP"
+          alt="Landing Page Writer"
+          class="logo"
+        />
+        <h1>Landing Page Writer</h1>
+        <p class="tagline">Generate high-converting landing page copy</p>
+      </header>
+
+      <main>
+        <form id="landingPageForm" class="generator-form">
+          <div class="form-group">
+            <label for="offer">What are you offering?</label>
+            <input
+              type="text"
+              id="offer"
+              name="offer"
+              class="form-control"
+              required
+              placeholder="e.g. A free 5-day fitness challenge for busy moms"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="audience">Who is it for?</label>
+            <input
+              type="text"
+              id="audience"
+              name="audience"
+              class="form-control"
+              required
+              placeholder="e.g. Moms over 35 who want to lose weight at home"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="result">What result does it help them achieve?</label>
+            <input
+              type="text"
+              id="result"
+              name="result"
+              class="form-control"
+              required
+              placeholder="e.g. Lose their first 5 pounds without meal prepping or a gym"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="cta">What action do you want them to take?</label>
+            <input
+              type="text"
+              id="cta"
+              name="cta"
+              class="form-control"
+              required
+              placeholder="e.g. Sign up for the free challenge"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Generate Landing Page Copy
+          </button>
+        </form>
+
+        <div id="loadingSpinner" class="loading-spinner">
+          <div class="spinner"></div>
+          <p>Crafting your landing page copy...</p>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+        <div id="successMessage" class="success-message"></div>
+
+        <div id="resultsContainer" class="results-container">
+          <!-- Results will be displayed here -->
+        </div>
+      </main>
+
+      <footer>
+        <p>Part of the AI Hustle Framework</p>
+      </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

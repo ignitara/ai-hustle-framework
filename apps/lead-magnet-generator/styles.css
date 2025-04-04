@@ -1,0 +1,41 @@
+/* AI Hustle Framework - Lead Magnet Generator Specific Styles */
+
+/* Lead magnet-specific card styles */
+.magnet-card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.magnet-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+}
+
+.magnet-card .title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.magnet-card .description {
+  color: #4b5563;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.magnet-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Add any other app-specific styles below */
